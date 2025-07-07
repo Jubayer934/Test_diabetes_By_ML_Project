@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Diabetes Checker</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🩺 Diabetes Prediction</h1>
+    <form action="/predict" method="post">
+      <input name="Pregnancies" placeholder="Pregnancies" required>
+      <input name="Glucose" placeholder="Glucose" required>
+      <input name="BloodPressure" placeholder="Blood Pressure" required>
+      <input name="SkinThickness" placeholder="Skin Thickness" required>
+      <input name="Insulin" placeholder="Insulin" required>
+      <input name="BMI" placeholder="BMI" required>
+      <input name="DiabetesPedigreeFunction" placeholder="Diabetes Pedigree Function" required>
+      <input name="Age" placeholder="Age" required>
+      <button type="submit">Predict</button>
+    </form>
+    {% if prediction %}
+      <div class="result">{{ prediction }}</div>
+    {% endif %}
+  </div>
+</body>
+</html>
